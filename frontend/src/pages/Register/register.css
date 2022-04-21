@@ -1,0 +1,53 @@
+.register-page{  
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(
+            rgba(255, 255, 255, 0.5),
+            rgba(255, 255, 255, 0.5)
+          ), url('https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8OHx8fGVufDB8fHx8&w=1000&q=80');
+    background-size: cover;
+}
+.register-title{
+    font-size: 45px;
+}
+.register-form{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.register-form >label{
+    margin: 10px 0px;
+    font-weight:bolder;
+}
+
+.register-input{
+    padding: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    width: 300px;
+}
+.register-btn{
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: rgb(182, 115, 245);
+    border: none;
+    height: 30px;
+    color: white;
+   
+    border-radius: 10px;
+}
+.login-btn{
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: rgb(51, 37, 134);
+    border: none;
+    color: white;
+    height: 30px;
+    width: 300px;
+    border-radius: 10px;
+}
