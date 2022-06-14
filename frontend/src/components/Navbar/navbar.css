@@ -17,11 +17,19 @@
     margin-left: 7px;
  
 }
-.profileimg{
+.profileimgg{
     border-radius: 50%;
     object-fit: cover;
     height:2.5rem;
     cursor: pointer;
+    position: absolute;
+    right:30px;
+    top: 2px;
+}
+.loginbtn{
+    position: absolute;
+    right:30px;
+    top: 2px;
 }
 .navright{
     flex:20%;

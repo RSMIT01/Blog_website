@@ -5,8 +5,8 @@ const mongoose=require('mongoose');
 const authroute=require("./routes/auth")
 const userroute=require("./routes/users")
 const postroute=require("./routes/posts")
-const catroute=require("./routes/categories")
 const multer=require("multer")
+const path=require("path");
 
 dotenv.config();
 app.use(express.json());
@@ -23,10 +23,11 @@ try {
 } catch (error) {
     console.log(error)
 }
+app.use("/images",express.static(path.join(__dirname,"public/images")))
 
 const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
-        cb(null,"images");
+        cb(null,"public/images");
     },filename:(req,file,cb)=>{
         cb(null,req.body.name);
     }
@@ -41,7 +42,7 @@ app.post("/api/upload",upload.single("file"),(req,res)=>{
 app.use("/api/auth",authroute);
 app.use("/api/users",userroute);
 app.use("/api/posts",postroute);
-app.use("/api/categories",catroute);
+
 
 
 

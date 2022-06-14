@@ -5,23 +5,28 @@ import Profile from "./pages/Profile/Profile";
 import Home from "./pages/Home/Home";
 import Regiser from "./pages/Register/Register"
 import Single from "./pages/Single-blog/Single";
+import {AuthContext} from "../src/context/AuthContext"
+
 import {
   BrowserRouter as Router,
   Routes,
   Route
 
 } from "react-router-dom";
+import { useContext } from "react";
 
 
 
 
 
 function App() {
-  const user =false;
+ 
+  const {user}= useContext(AuthContext)
+
   return (
     <Router>
       <Navbar />
-      <Routes>
+      <Routes> 
         <Route exact path="/" element={<Home />} />
         <Route exact path="/create" element={user ? <Create />:< Regiser/>} />
         <Route exact path="/profile" element={user ?<Profile />:<Regiser />} />

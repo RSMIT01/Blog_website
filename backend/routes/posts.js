@@ -5,9 +5,12 @@ const Post = require('../models/Post');
 
 // create 
 router.post("/", async (req, res) => {
-    const newpost = new Post(req.body);
+    // const newpost = new Post(req.body);
+    const newpost=new Post(req.body)
+    
     try {
         const savedpost = await newpost.save();
+        console.log(savedpost)
         res.status(200).json(savedpost);
     } catch (error) {
 
@@ -39,11 +42,12 @@ router.put("/:id", async (req, res) => {
     }
 });
 //dlt
-router.delete("/:id", async (req, res) => {
+router.delete("/:id/:username", async (req, res) => {
     try {
+        
         const post = await Post.findById(req.params.id);
 
-        if (post.username === req.body.username) {
+        if (post.username === req.params.username) {
             try {
                 await post.delete()
                 res.status(200).json("post deleted");
@@ -52,6 +56,7 @@ router.delete("/:id", async (req, res) => {
             }
         }
         else {
+            
             res.status(401).json("you are not alllowed to delete this post")
         }
 
@@ -76,18 +81,14 @@ router.get("/:id", async (req, res) => {
 //get all posts
 router.get("/", async (req, res) => {
     const username = req.query.user;
-    const categoryname = req.query.cat;
+    const category = req.query.cat;
     try {
 
         let posts;
         if (username) {
             posts = await Post.find({ username })
-        } else if (categoryname) {
-            posts = await Post.find({
-                categories: {
-                    $in: [categoryname]
-                }
-            })
+        } else if (category) {
+            posts = await Post.find({category })
         } else {
             posts = await Post.find();
         }

@@ -14,11 +14,7 @@ const UserSchema = new Mongoose.Schema({
     password:{
         type:String,
         required:true
-    },
-    profilepic:{
-        type:String,
-        default:""
-    },
+    }
 },{timestamps:true}
 );
 

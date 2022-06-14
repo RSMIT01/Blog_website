@@ -1,32 +1,52 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./profile.css"
+import {AuthContext} from "../../context/AuthContext"
 
 
 const Profile = () => {
+
+    const { user } = useContext(AuthContext)
+
     return (
         <div className="profile">
-            <div className="profile-title">
-                <span className="update-title">Update your Account </span>
-                <span className="delete-title">Delete Account</span>
-            </div>
-            <form  className="profile-form">
-                <label >Profile Picture</label>
-                <div className="profile-picture">
-                    <img className="profile-img" src="https://www.skillsportal.co.za/sites/default/files/field/image/deRfJz68gEUQ2VayR4DCyF-1200-80_0.jpg" alt="" />
-                    <label htmlFor="fileinput">
-                    <i className="fas fa-user-circle profile-icon"></i>
-                    </label>
-                    <input type="file" id="fileinput"  style={{ display: "none" }}/>
-                </div>
-                <label>Username</label>
-                <input type="text" placeholder="joh123"/>
-                <label>Email</label>
-                <input type="email" placeholder="John123@gmail.com"/>
-                <label>Password</label>
-                <input type="password"/>
-                <button className="profile-submit">Save</button>
-            </form>
+            <div>
+            <div className=" bg-light">
+                    <div className="container">
+                        <div className="row d-flex justify-content-center">
+                            <div className="col-md-10 mt-5 pt-5">
+                                <div className="row z-depth-3">
+                                    <div className="col-sm-4 bg-info rounded-left">
+                                        <div className="card-block text-center text-white">
+                                            <i className="fas fa-user-tie fa-7x mt-5"></i>
+                                            <h2 className="font-weight-bold mt-4">Profile</h2>
+                                       
+                                        </div>
+                                    </div>
+                                    <div className="col-sm-8 bg-white rounded-right">
+                                     
+                                        <hr className="bg-primary mt-0 w-25" />
+                                        <div className="row">
+                                            <div className="col-sm-6">
+                                                <p className="font-weight-bold">Username:</p>
+                                                <h6 className=" text-muted">{user.username}</h6>
+                                            </div>
+                                            
+                                            <div className="col-sm-6">
+                                                <p className="font-weight-bold">Email:</p>
+                                                <h6 className=" text-muted">{user.email}</h6>
+                                            </div>
 
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
         </div>
     )
 }

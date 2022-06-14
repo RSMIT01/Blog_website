@@ -18,8 +18,8 @@ const PostSchema = new Mongoose.Schema({
         type:String,
         required:true
     },
-    categories:{
-        type:Array,
+    category:{
+        type:String,
         required:false
     }
 },{timestamps:true}

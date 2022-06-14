@@ -4,6 +4,8 @@
 .single-blog-wrapper{
     padding: 20px;
     padding-right: 0;
+    display: flex;
+    flex-direction: column;
 }
 .blogimage{
     width: 100%;
@@ -17,6 +19,18 @@
     font-size: 29px;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+.blogtitleinput{
+    text-align: center;
+    font-size: 29px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid gray;
+}
+.blogtitleinput:focus{
+    outline: none;
+
 }
 .edit-blog{
     float: right;
@@ -41,10 +55,30 @@
     font-style: 18px;
     line-height: 25px;
 }
+.blog-discinput{
+    text-align: center;
+    border: none;
+   
+}
+.blog-discinput:focus{
+    outline: none;
+}
 .blog-disc::first-letter{
     margin-left: 20px;
     font-size: 30px;
     font-weight: 600;
+}
+.updatebutton{
+    border: none;
+    background-color: blueviolet;
+    padding: 5px;
+    text-align: center;
+    width: 100px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 20px;
 }
 @media only screen and (max-width: 600px) {
     .blogimage{
